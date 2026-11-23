@@ -35,7 +35,7 @@ The compiler is normally included at
 ```
 
 The MSI build runs WiX's normal validation (not `-sval`). Verification installs,
-checks the personalized greeting and all document hashes, checks the HKCU
+checks the personalized greeting and all document hashes, checks the uninstall
 uninstall registration, removes and reinstalls the application. It leaves the
 application installed at `%LOCALAPPDATA%\Programs\JoeySaadeHelloWorld`.
 No elevation or PATH modification is needed.
@@ -53,7 +53,7 @@ Run from the repository root, using PowerShell:
 
 ```powershell
 docker run --name 435l-lab11-debian --mount "type=bind,source=$($PWD.Path),target=/work" -w /work -d debian:bookworm-slim sleep infinity
-docker exec 435l-lab11-debian sh -c "apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev rpm"
+docker exec 435l-lab11-debian sh -c "apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev rpm file"
 docker exec 435l-lab11-debian sh scripts/build-linux.sh
 docker exec 435l-lab11-debian sh scripts/verify-debian.sh
 ```
@@ -101,3 +101,15 @@ Evidence screenshots are captures of actual command windows and Windows
 Programs and Features, not fabricated terminal illustrations. The report
 identifies Docker/container testing explicitly rather than claiming native
 Debian or Fedora desktop testing.
+### Container prerequisites
+
+Include `file` in the Debian tool installation above: RPM's build-root processing
+uses it. Debian slim images exclude most documentation by default; the DEB
+verification script supplies targeted `--path-include` overrides so the actual
+README, help and user guide are installed and hash-checked.
+
+The WiX linker excludes only ICE91 (`-sice:ICE91`), the warning about per-user
+file locations, because this package deliberately supports per-user installation
+only. All other MSI validation checks run, and install/removal is independently
+verified. Registry key paths are in HKCU; Windows Installer may register the
+Programs and Features entry under HKCU or HKLM depending on its execution context.

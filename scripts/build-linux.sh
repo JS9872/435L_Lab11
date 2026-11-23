@@ -10,6 +10,7 @@ mkdir -p "$stage/DEBIAN" "$stage/usr/local/bin" "$stage/usr/share/doc/helloworld
 install -m 0755 build/linux/helloworld "$stage/usr/local/bin/helloworld"
 install -m 0644 docs/README.md docs/help.txt docs/user_guide.txt "$stage/usr/share/doc/helloworld-joey-saade/"
 install -m 0644 packaging/debian/control "$stage/DEBIAN/control"
+(cd "$stage" && find usr -type f -exec md5sum {} + > DEBIAN/md5sums)
 dpkg-deb --root-owner-group --build "$stage" deliverables/helloworld_joey_saade.deb
 dpkg-deb --info deliverables/helloworld_joey_saade.deb
 dpkg-deb --contents deliverables/helloworld_joey_saade.deb

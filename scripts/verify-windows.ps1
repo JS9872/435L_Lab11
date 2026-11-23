@@ -24,14 +24,15 @@ if ($LASTEXITCODE -ne 0 -or $output -cne 'Hello, World from Joey_Saade!') { thro
 foreach ($document in @('README.md', 'help.txt', 'user_guide.txt')) {
     if ((Get-FileHash "$root/docs/$document").Hash -ne (Get-FileHash "$folder/$document").Hash) { throw "Document mismatch: $document" }
 }
-$entry = Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$productCode"
+$registration = @("HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$productCode", "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$productCode")
+$entry = $registration | Where-Object { Test-Path $_ } | ForEach-Object { Get-ItemProperty $_ } | Select-Object -First 1
 if ($entry.DisplayName -ne 'Hello World - Joey Saade') { throw 'Installed-program registration missing' }
 $entry | Select-Object DisplayName, DisplayVersion, Publisher, UninstallString | Format-List
 Get-ChildItem $folder | Select-Object Name, Length | Format-Table -AutoSize
 Write-Host 'Checking uninstall and reinstall...'
 $process = Start-Process msiexec.exe -ArgumentList "/x $productCode /qn /norestart /l*v `"$logs/msi-uninstall-verbose.log`"" -Wait -PassThru
 if ($process.ExitCode -ne 0 -or (Test-Path "$folder/helloworld.exe")) { throw 'Uninstall verification failed' }
-if (Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$productCode") { throw 'Uninstall registration remained' }
+if ($registration | Where-Object { Test-Path $_ }) { throw 'Uninstall registration remained' }
 $process = Start-Process msiexec.exe -ArgumentList "/i `"$msi`" /qn /norestart /l*v `"$logs/msi-reinstall-verbose.log`"" -Wait -PassThru
 if ($process.ExitCode -ne 0) { throw 'Reinstall failed' }
 Write-Host 'PASS: MSI installation, output, documentation, registration, removal and reinstall'
