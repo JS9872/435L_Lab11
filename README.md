@@ -94,7 +94,8 @@ educational artifacts, not production installers.
 `scripts/finalize.ps1` creates `source.zip` and updates SHA-256 checksums.
 `report/build_report.py` recreates the Word report from screenshots and verified
 logs (Python packages: python-docx and Pillow). Report rendering uses the
-document runtime's `render_docx.py`, LibreOffice and Poppler. These report tools
+document runtime's `render_docx.py`, LibreOffice and Poppler, or installed Word
+and `report/render_report.ps1` when LibreOffice is unavailable. These report tools
 are not needed to compile or run either application.
 
 Evidence screenshots are captures of actual command windows and Windows

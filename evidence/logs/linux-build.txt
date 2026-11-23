@@ -1,0 +1,106 @@
+dpkg-deb: building package 'helloworld-joey-saade' in 'deliverables/helloworld_joey_saade.deb'.
+ new Debian package, version 2.0.
+ size 3996 bytes: control archive=628 bytes.
+     328 bytes,    10 lines      control              
+     303 bytes,     4 lines      md5sums              
+ Package: helloworld-joey-saade
+ Version: 1.0.0
+ Section: utils
+ Priority: optional
+ Architecture: amd64
+ Maintainer: Joey Saade <jhs15@mail.aub.edu>
+ Depends: libc6 (>= 2.34)
+ Description: Hello World application for EECE 435L Lab 11
+  Prints a personalized greeting from Joey Saade.
+  Includes a README, command help, and a user guide.
+drwxr-xr-x root/root         0 2026-11-23 11:00 ./
+drwxr-xr-x root/root         0 2026-11-23 11:00 ./usr/
+drwxr-xr-x root/root         0 2026-11-23 11:00 ./usr/local/
+drwxr-xr-x root/root         0 2026-11-23 11:01 ./usr/local/bin/
+-rwxr-xr-x root/root     15968 2026-11-23 11:01 ./usr/local/bin/helloworld
+drwxr-xr-x root/root         0 2026-11-23 11:00 ./usr/share/
+drwxr-xr-x root/root         0 2026-11-23 11:00 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/
+-rw-r--r-- root/root       660 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/README.md
+-rw-r--r-- root/root       309 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/help.txt
+-rw-r--r-- root/root      1227 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/user_guide.txt
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.eKSg63
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd /work/build/rpmbuild/BUILD
++ rm -rf helloworld-joey-saade-1.0.0
++ /usr/lib/rpm/rpmuncompress -x /work/build/rpmbuild/SOURCES/helloworld-joey-saade-1.0.0.tar.gz
++ STATUS=0
++ [ 0 -ne 0 ]
++ cd helloworld-joey-saade-1.0.0
++ /bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.xDZxv1
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd helloworld-joey-saade-1.0.0
++ test -x helloworld
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.MSGuyJ
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ /bin/rm -rf /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ /bin/mkdir -p /work/build/rpmbuild/BUILDROOT
++ /bin/mkdir /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ cd helloworld-joey-saade-1.0.0
++ install -D -m 0755 helloworld /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/local/bin/helloworld
++ install -d /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/share/doc/helloworld-joey-saade
++ install -m 0644 README.md help.txt user_guide.txt /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/share/doc/helloworld-joey-saade/
++ /usr/lib/rpm/brp-compress /usr
++ /usr/lib/rpm/brp-elfperms
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/brp-remove-la-files
+Processing files: helloworld-joey-saade-1.0.0-1.x86_64
+Provides: helloworld-joey-saade = 1.0.0-1 helloworld-joey-saade(x86-64) = 1.0.0-1
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
+Wrote: /work/build/rpmbuild/SRPMS/helloworld-joey-saade-1.0.0-1.src.rpm
+Wrote: /work/build/rpmbuild/RPMS/x86_64/helloworld-joey-saade-1.0.0-1.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.QJQq6V
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd helloworld-joey-saade-1.0.0
++ /bin/rm -rf /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.4ekKYv
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ rm -rf helloworld-joey-saade-1.0.0 helloworld-joey-saade-1.0.0.gemspec
++ RPM_EC=0
++ jobs -p
++ exit 0
+Name        : helloworld-joey-saade
+Version     : 1.0.0
+Release     : 1
+Architecture: x86_64
+Install Date: (not installed)
+Group       : Unspecified
+Size        : 18012
+License     : LicenseRef-Lab-Educational
+Signature   : (none)
+Source RPM  : helloworld-joey-saade-1.0.0-1.src.rpm
+Build Date  : Mon Nov 23 11:01:45 2026
+Build Host  : 1d1354842ac3
+Summary     : Personalized Hello World for EECE 435L Lab 11
+Description :
+A compiled x86-64 Linux application by Joey Saade, student ID 202305993.
+Prints Hello, World from Joey_Saade! and includes usage documentation.
+/usr/local/bin/helloworld
+/usr/share/doc/helloworld-joey-saade
+/usr/share/doc/helloworld-joey-saade/README.md
+/usr/share/doc/helloworld-joey-saade/help.txt
+/usr/share/doc/helloworld-joey-saade/user_guide.txt

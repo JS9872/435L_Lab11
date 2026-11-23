@@ -1,0 +1,31 @@
+(Reading database ... 11067 files and directories currently installed.)
+Preparing to unpack .../helloworld_joey_saade.deb ...
+Unpacking helloworld-joey-saade (1.0.0) over (1.0.0) ...
+Setting up helloworld-joey-saade (1.0.0) ...
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                  Version      Architecture Description
++++-=====================-============-============-============================================
+ii  helloworld-joey-saade 1.0.0        amd64        Hello World application for EECE 435L Lab 11
+Package: helloworld-joey-saade
+Status: install ok installed
+Priority: optional
+Section: utils
+Maintainer: Joey Saade <jhs15@mail.aub.edu>
+Architecture: amd64
+Version: 1.0.0
+Depends: libc6 (>= 2.34)
+Description: Hello World application for EECE 435L Lab 11
+ Prints a personalized greeting from Joey Saade.
+ Includes a README, command help, and a user guide.
+Hello, World from Joey_Saade!
+(Reading database ... 11067 files and directories currently installed.)
+Removing helloworld-joey-saade (1.0.0) ...
+dpkg: warning: while removing helloworld-joey-saade, directory '/usr/local' not empty so not removed
+Selecting previously unselected package helloworld-joey-saade.
+(Reading database ... 11060 files and directories currently installed.)
+Preparing to unpack .../helloworld_joey_saade.deb ...
+Unpacking helloworld-joey-saade (1.0.0) ...
+Setting up helloworld-joey-saade (1.0.0) ...
+PASS: DEB installation, output, documentation, integrity, removal and reinstall

@@ -1,0 +1,62 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261123130723
+Username: LAPTOP_JOEY\joeys
+RunAs User: LAPTOP_JOEY\joeys
+Configuration Name: 
+Machine: LAPTOP_JOEY (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoLogo -NoProfile -NoExit -ExecutionPolicy Bypass -File C:\Main\School\CSE FALL 4\EECE 435L\Labs\Lab11\Code\scripts\show-evidence.ps1 -Stage WindowsVerify
+Process ID: 37344
+PSVersion: 5.1.26100.10068
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.10068
+BuildVersion: 10.0.26100.10068
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS> .\scripts\verify-windows.ps1
+
+Name                   Value
+----                   -----
+ARPCOMMENTS            EECE 435L Lab 11 - Student ID 202305993
+ARPHELPLINK            mailto:jhs15@mail.aub.edu
+Manufacturer           Joey Saade
+ProductCode            {EBFD821D-613E-411C-8B0D-B6AEFAE22D92}
+ProductLanguage        1033
+ProductName            Hello World - Joey Saade
+ProductVersion         1.0.0
+SecureCustomProperties WIX_DOWNGRADE_DETECTED;WIX_UPGRADE_DETECTED
+UpgradeCode            {0E3BA287-4711-451D-A031-2CD752030599}
+
+
+COMMAND: msiexec /i helloworld_joey_saade.msi /qb /norestart
+MSI install exit code: 0
+Hello, World from Joey_Saade!
+PS>TerminatingError(): "The pipeline has been stopped."
+
+
+DisplayName     : Hello World - Joey Saade
+DisplayVersion  : 1.0.0
+Publisher       : Joey Saade
+UninstallString : MsiExec.exe /I{EBFD821D-613E-411C-8B0D-B6AEFAE22D92}
+
+
+
+
+Name           Length
+----           ------
+helloworld.exe   3072
+help.txt          309
+README.md         660
+user_guide.txt   1227
+
+
+Checking uninstall and reinstall...
+PASS: MSI installation, output, documentation, registration, removal and reinstall
+SUCCESS - commands completed without errors
+**********************
+Windows PowerShell transcript end
+End time: 20261123130733
+**********************

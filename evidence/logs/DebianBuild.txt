@@ -1,0 +1,47 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261123130808
+Username: LAPTOP_JOEY\joeys
+RunAs User: LAPTOP_JOEY\joeys
+Configuration Name: 
+Machine: LAPTOP_JOEY (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoLogo -NoProfile -NoExit -ExecutionPolicy Bypass -File C:\Main\School\CSE FALL 4\EECE 435L\Labs\Lab11\Code\scripts\show-evidence.ps1 -Stage DebianBuild
+Process ID: 16436
+PSVersion: 5.1.26100.10068
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.10068
+BuildVersion: 10.0.26100.10068
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS> docker exec 435l-lab11-debian sh -c "gcc ...; dpkg-deb --build ..."
+$ gcc -std=c11 -Wall -Wextra -Werror -O2 -o build/linux/helloworld src/linux/helloworld.c
+$ dpkg-deb --root-owner-group --build build/linux/deb deliverables/helloworld_joey_saade.deb
+dpkg-deb: building package 'helloworld-joey-saade' in 'deliverables/helloworld_joey_saade.deb'.
+$ dpkg-deb -I deliverables/helloworld_joey_saade.deb
+ new Debian package, version 2.0.
+ size 3996 bytes: control archive=628 bytes.
+     328 bytes,    10 lines      control
+     303 bytes,     4 lines      md5sums
+ Package: helloworld-joey-saade
+ Version: 1.0.0
+ Section: utils
+ Priority: optional
+ Architecture: amd64
+ Maintainer: Joey Saade <jhs15@mail.aub.edu>
+ Depends: libc6 (>= 2.34)
+ Description: Hello World application for EECE 435L Lab 11
+  Prints a personalized greeting from Joey Saade.
+  Includes a README, command help, and a user guide.
+$ dpkg-deb -c deliverables/helloworld_joey_saade.deb
+-rwxr-xr-x root/root     15968 2026-11-23 11:01 ./usr/local/bin/helloworld
+-rw-r--r-- root/root       660 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/README.md
+-rw-r--r-- root/root       309 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/help.txt
+-rw-r--r-- root/root      1227 2026-11-23 11:01 ./usr/share/doc/helloworld-joey-saade/user_guide.txt
+SUCCESS - commands completed without errors
+**********************
+Windows PowerShell transcript end
+End time: 20261123130809
+**********************

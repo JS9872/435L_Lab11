@@ -10,7 +10,7 @@ test "$(/usr/local/bin/helloworld)" = 'Hello, World from Joey_Saade!'
 for document in README.md help.txt user_guide.txt; do
     cmp "docs/$document" "/usr/share/doc/helloworld-joey-saade/$document"
 done
-dpkg -V helloworld-joey-saade
+test -z "$(dpkg -V helloworld-joey-saade)"
 dpkg -r helloworld-joey-saade
 test ! -e /usr/local/bin/helloworld
 dpkg --path-include=/usr/share/doc/helloworld-joey-saade --path-include='/usr/share/doc/helloworld-joey-saade/*' -i deliverables/helloworld_joey_saade.deb

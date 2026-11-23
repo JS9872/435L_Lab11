@@ -1,0 +1,11 @@
+{
+    "UpgradeCode":  "{0E3BA287-4711-451D-A031-2CD752030599}",
+    "ARPCOMMENTS":  "EECE 435L Lab 11 - Student ID 202305993",
+    "ProductLanguage":  "1033",
+    "Manufacturer":  "Joey Saade",
+    "SecureCustomProperties":  "WIX_DOWNGRADE_DETECTED;WIX_UPGRADE_DETECTED",
+    "ProductCode":  "{EBFD821D-613E-411C-8B0D-B6AEFAE22D92}",
+    "ProductName":  "Hello World - Joey Saade",
+    "ARPHELPLINK":  "mailto:jhs15@mail.aub.edu",
+    "ProductVersion":  "1.0.0"
+}

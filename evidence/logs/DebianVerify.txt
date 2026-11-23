@@ -1,0 +1,55 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261123130723
+Username: LAPTOP_JOEY\joeys
+RunAs User: LAPTOP_JOEY\joeys
+Configuration Name: 
+Machine: LAPTOP_JOEY (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoLogo -NoProfile -NoExit -ExecutionPolicy Bypass -File C:\Main\School\CSE FALL 4\EECE 435L\Labs\Lab11\Code\scripts\show-evidence.ps1 -Stage DebianVerify
+Process ID: 34016
+PSVersion: 5.1.26100.10068
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.10068
+BuildVersion: 10.0.26100.10068
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS> docker exec 435l-lab11-debian sh scripts/verify-debian.sh
+(Reading database ... 11067 files and directories currently installed.)
+Preparing to unpack .../helloworld_joey_saade.deb ...
+Unpacking helloworld-joey-saade (1.0.0) over (1.0.0) ...
+Setting up helloworld-joey-saade (1.0.0) ...
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                  Version      Architecture Description
++++-=====================-============-============-============================================
+ii  helloworld-joey-saade 1.0.0        amd64        Hello World application for EECE 435L Lab 11
+Package: helloworld-joey-saade
+Status: install ok installed
+Priority: optional
+Section: utils
+Maintainer: Joey Saade <jhs15@mail.aub.edu>
+Architecture: amd64
+Version: 1.0.0
+Depends: libc6 (>= 2.34)
+Description: Hello World application for EECE 435L Lab 11
+ Prints a personalized greeting from Joey Saade.
+ Includes a README, command help, and a user guide.
+Hello, World from Joey_Saade!
+(Reading database ... 11067 files and directories currently installed.)
+Removing helloworld-joey-saade (1.0.0) ...
+dpkg: warning: while removing helloworld-joey-saade, directory '/usr/local' not empty so not removed
+Selecting previously unselected package helloworld-joey-saade.
+(Reading database ... 11060 files and directories currently installed.)
+Preparing to unpack .../helloworld_joey_saade.deb ...
+Unpacking helloworld-joey-saade (1.0.0) ...
+Setting up helloworld-joey-saade (1.0.0) ...
+PASS: DEB installation, output, documentation, integrity, removal and reinstall
+SUCCESS - commands completed without errors
+**********************
+Windows PowerShell transcript end
+End time: 20261123130728
+**********************

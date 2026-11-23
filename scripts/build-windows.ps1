@@ -9,7 +9,7 @@ $compiler = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 if ($LASTEXITCODE -ne 0) { throw 'C# compilation failed' }
 & "$WixBin/candle.exe" -nologo -arch x64 "-dPayloadDir=$build" "-dDocsDir=$root/docs" -out "$build/Product.wixobj" "$root/packaging/windows/Product.wxs"
 if ($LASTEXITCODE -ne 0) { throw 'WiX compilation failed' }
-& "$WixBin/light.exe" -nologo -sice:ICE91 -out "$output/helloworld_joey_saade.msi" "$build/Product.wixobj"
+& "$WixBin/light.exe" -nologo -sice:ICE91 -pdbout "$build/Product.wixpdb" -out "$output/helloworld_joey_saade.msi" "$build/Product.wixobj"
 if ($LASTEXITCODE -ne 0) { throw 'MSI linking or validation failed' }
 & "$build/helloworld.exe"
 Write-Host "MSI built and validated: $output/helloworld_joey_saade.msi"

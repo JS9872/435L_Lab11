@@ -1,0 +1,38 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261123130630
+Username: LAPTOP_JOEY\joeys
+RunAs User: LAPTOP_JOEY\joeys
+Configuration Name: 
+Machine: LAPTOP_JOEY (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoLogo -NoProfile -NoExit -ExecutionPolicy Bypass -File C:\Main\School\CSE FALL 4\EECE 435L\Labs\Lab11\Code\scripts\show-evidence.ps1 -Stage WindowsBuild
+Process ID: 32244
+PSVersion: 5.1.26100.10068
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.10068
+BuildVersion: 10.0.26100.10068
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS> .\scripts\build-windows.ps1 (WiX 3.14.1 candle + light)
+
+Product.wxs
+
+Hello, World from Joey_Saade!
+MSI built and validated: C:\Main\School\CSE FALL 4\EECE 435L\Labs\Lab11\Code\deliverables/helloworld_joey_saade.msi
+PS> Get-Item deliverables/helloworld_joey_saade.msi
+
+Name                      Length LastWriteTime
+----                      ------ -------------
+helloworld_joey_saade.msi  32768 11/23/2026 1:06:34 PM
+
+
+ICE91 alone is excluded: this is intentionally per-user only.
+All remaining MSI validation checks run normally.
+SUCCESS - commands completed without errors
+**********************
+Windows PowerShell transcript end
+End time: 20261123130648
+**********************

@@ -1,0 +1,59 @@
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.zDvEZ8
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd /work/build/rpmbuild/BUILD
++ rm -rf helloworld-joey-saade-1.0.0
++ /usr/lib/rpm/rpmuncompress -x /work/build/rpmbuild/SOURCES/helloworld-joey-saade-1.0.0.tar.gz
++ STATUS=0
++ [ 0 -ne 0 ]
++ cd helloworld-joey-saade-1.0.0
++ /bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.9e7HSG
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd helloworld-joey-saade-1.0.0
++ test -x helloworld
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.Dhq5u9
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ /bin/rm -rf /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ /bin/mkdir -p /work/build/rpmbuild/BUILDROOT
++ /bin/mkdir /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ cd helloworld-joey-saade-1.0.0
++ install -D -m 0755 helloworld /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/local/bin/helloworld
++ install -d /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/share/doc/helloworld-joey-saade
++ install -m 0644 README.md help.txt user_guide.txt /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64/usr/share/doc/helloworld-joey-saade/
++ /usr/lib/rpm/brp-compress /usr
++ /usr/lib/rpm/brp-elfperms
++ /usr/lib/rpm/brp-strip /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/brp-remove-la-files
+Processing files: helloworld-joey-saade-1.0.0-1.x86_64
+Provides: helloworld-joey-saade = 1.0.0-1 helloworld-joey-saade(x86-64) = 1.0.0-1
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
+Wrote: /work/build/rpmbuild/SRPMS/helloworld-joey-saade-1.0.0-1.src.rpm
+Wrote: /work/build/rpmbuild/RPMS/x86_64/helloworld-joey-saade-1.0.0-1.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.ppG24V
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ cd helloworld-joey-saade-1.0.0
++ /bin/rm -rf /work/build/rpmbuild/BUILDROOT/helloworld-joey-saade-1.0.0-1.x86_64
++ RPM_EC=0
++ jobs -p
++ exit 0
+Executing(rmbuild): /bin/sh -e /var/tmp/rpm-tmp.WB9MMj
++ umask 022
++ cd /work/build/rpmbuild/BUILD
++ rm -rf helloworld-joey-saade-1.0.0 helloworld-joey-saade-1.0.0.gemspec
++ RPM_EC=0
++ jobs -p
++ exit 0

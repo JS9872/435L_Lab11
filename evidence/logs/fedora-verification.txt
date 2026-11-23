@@ -1,0 +1,31 @@
+Verifying...                          ########################################
+Preparing...                          ########################################
+Updating / installing...
+helloworld-joey-saade-1.0.0-1         ########################################
+Name        : helloworld-joey-saade
+Version     : 1.0.0
+Release     : 1
+Architecture: x86_64
+Install Date: Mon Nov 23 11:01:49 2026
+Group       : Unspecified
+Size        : 18012
+License     : LicenseRef-Lab-Educational
+Signature   : (none)
+Source RPM  : helloworld-joey-saade-1.0.0-1.src.rpm
+Build Date  : Mon Nov 23 11:01:45 2026
+Build Host  : 1d1354842ac3
+Summary     : Personalized Hello World for EECE 435L Lab 11
+Description :
+A compiled x86-64 Linux application by Joey Saade, student ID 202305993.
+Prints Hello, World from Joey_Saade! and includes usage documentation.
+/usr/local/bin/helloworld
+/usr/share/doc/helloworld-joey-saade
+/usr/share/doc/helloworld-joey-saade/README.md
+/usr/share/doc/helloworld-joey-saade/help.txt
+/usr/share/doc/helloworld-joey-saade/user_guide.txt
+Hello, World from Joey_Saade!
+Verifying...                          ########################################
+Preparing...                          ########################################
+Updating / installing...
+helloworld-joey-saade-1.0.0-1         ########################################
+PASS: RPM installation, output, documentation, integrity, removal and reinstall
