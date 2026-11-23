@@ -1,0 +1,34 @@
+HELLO WORLD — USER GUIDE
+Author: Joey Saade | Student ID: 202305993 | EECE 435L Lab 11
+
+WINDOWS
+1. Install: msiexec /i helloworld_joey_saade.msi /qb
+2. Files are installed per-user in:
+   %LOCALAPPDATA%\Programs\JoeySaadeHelloWorld
+3. In PowerShell run:
+   & "$env:LOCALAPPDATA\Programs\JoeySaadeHelloWorld\helloworld.exe"
+4. Open Control Panel > Programs and Features to see Hello World - Joey Saade.
+5. Uninstall through Programs and Features or:
+   msiexec /x helloworld_joey_saade.msi /qb
+No administrator privileges or global PATH changes are required.
+
+DEBIAN / UBUNTU (x86-64)
+1. Install: sudo dpkg -i helloworld_joey_saade.deb
+2. Run: /usr/local/bin/helloworld
+3. Verify: dpkg -l helloworld-joey-saade
+4. Remove: sudo dpkg -r helloworld-joey-saade
+
+FEDORA / RED HAT (x86-64)
+1. Install: sudo rpm -ivh helloworld_joey_saade.rpm
+2. Run: /usr/local/bin/helloworld
+3. Verify: rpm -qi helloworld-joey-saade
+4. Remove: sudo rpm -e helloworld-joey-saade
+
+LINUX FILE LOCATIONS
+Executable: /usr/local/bin/helloworld
+Documentation: /usr/share/doc/helloworld-joey-saade/
+The /usr/local/bin path follows this lab's instructions. Distribution packages
+normally use /usr/bin instead.
+
+EXPECTED OUTPUT
+Hello, World from Joey_Saade!

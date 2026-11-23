@@ -1,0 +1,10 @@
+Package: helloworld-joey-saade
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Joey Saade <jhs15@mail.aub.edu>
+Depends: libc6 (>= 2.34)
+Description: Hello World application for EECE 435L Lab 11
+ Prints a personalized greeting from Joey Saade.
+ Includes a README, command help, and a user guide.

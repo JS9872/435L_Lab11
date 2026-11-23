@@ -1,0 +1,11 @@
+Hello World 1.0.0 — Joey Saade
+
+Usage: helloworld
+Windows usage: helloworld.exe
+
+Expected output: Hello, World from Joey_Saade!
+Exit status: 0 on success.
+No arguments or configuration files are needed.
+
+If the command is not found, use the installed executable's full path.
+For support: jhs15@mail.aub.edu

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Hello World - Joey Saade" Language="1033"
+           Version="1.0.0" Manufacturer="Joey Saade"
+           UpgradeCode="0E3BA287-4711-451D-A031-2CD752030599">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser"
+             InstallPrivileges="limited" Platform="x64"
+             Description="EECE 435L Lab 11 - Joey Saade" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="ProgramsFolder" Name="Programs">
+          <Directory Id="INSTALLFOLDER" Name="JoeySaadeHelloWorld">
+            <Component Id="Application" Guid="2DA8D242-996A-493F-8C49-952294315F01" Win64="yes">
+              <File Id="HelloWorldExe" Source="$(var.PayloadDir)\helloworld.exe" />
+              <RegistryValue Root="HKCU" Key="Software\JoeySaade\HelloWorld" Name="Application" Type="integer" Value="1" KeyPath="yes" />
+              <RemoveFolder Id="RemoveInstallFolder" On="uninstall" />
+            </Component>
+            <Component Id="Readme" Guid="2DA8D242-996A-493F-8C49-952294315F02" Win64="yes">
+              <File Id="ReadmeFile" Source="$(var.DocsDir)\README.md" />
+              <RegistryValue Root="HKCU" Key="Software\JoeySaade\HelloWorld" Name="Readme" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="Help" Guid="2DA8D242-996A-493F-8C49-952294315F03" Win64="yes">
+              <File Id="HelpFile" Source="$(var.DocsDir)\help.txt" />
+              <RegistryValue Root="HKCU" Key="Software\JoeySaade\HelloWorld" Name="Help" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="UserGuide" Guid="2DA8D242-996A-493F-8C49-952294315F04" Win64="yes">
+              <File Id="UserGuideFile" Source="$(var.DocsDir)\user_guide.txt" />
+              <RegistryValue Root="HKCU" Key="Software\JoeySaade\HelloWorld" Name="UserGuide" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="Complete" Title="Hello World and Documentation" Level="1">
+      <ComponentRef Id="Application" />
+      <ComponentRef Id="Readme" />
+      <ComponentRef Id="Help" />
+      <ComponentRef Id="UserGuide" />
+    </Feature>
+    <Property Id="ARPHELPLINK" Value="mailto:jhs15@mail.aub.edu" />
+    <Property Id="ARPCOMMENTS" Value="EECE 435L Lab 11 - Student ID 202305993" />
+  </Product>
+</Wix>
